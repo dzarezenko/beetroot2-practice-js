@@ -49,8 +49,8 @@ function showTextFromInput() {
   displayText(css, textField.value);
 }
 
-function checkboxClick(cssProperty, context) {
-  css[cssProperty].isActive = context.checked;
+function checkboxClick(context) {
+  css[context.id].isActive = context.checked;
   showTextFromInput();
 }
 

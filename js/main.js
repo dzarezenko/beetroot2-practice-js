@@ -9,19 +9,23 @@
 var css = [
   {
     property: "color",
-    value: "#ff0000"
+    value: "#ff0000",
+    isActive: true
   },
   {
     property: "font-size",
-    value: "14pt"
+    value: "14pt",
+    isActive: true
   },
   {
     property: "text-align",
-    value: "center"
+    value: "center",
+    isActive: true
   },
   {
     property: "text-decoration",
-    value: "underline"
+    value: "underline",
+    isActive: true
   }
 ];
 
@@ -32,7 +36,9 @@ function displayText(cssArray, text = "") {
     console.log(cssProperty);
 
     // add css property to the styles string
-    cssStyle+= `${cssProperty.property}: ${cssProperty.value};`;
+    if (cssProperty.isActive) {
+      cssStyle+= `${cssProperty.property}: ${cssProperty.value};`;
+    }
   }
 
   //document.write(`<p style="${cssStyle}">${text}</p>`);

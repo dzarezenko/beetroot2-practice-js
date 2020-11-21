@@ -6,7 +6,7 @@
 в тегах <p></p>, добавив в открывающий тег атрибут style со всеми стилями, перечисленными в массиве.
 */
 
-let css = [
+var css = [
   {
     property: "color",
     value: "#ff0000"
@@ -35,8 +35,16 @@ function displayText(cssArray, text = "") {
     cssStyle+= `${cssProperty.property}: ${cssProperty.value};`;
   }
 
-  document.write(`<p style="${cssStyle}">${text}</p>`);
+  //document.write(`<p style="${cssStyle}">${text}</p>`);
+  document.getElementById('container').innerHTML = `<p style="${cssStyle}">${text}</p>`;
 }
 
-displayText(css, "Hello World!!!");
-displayText(css, "Some other text");
+function showTextFromInput() {
+  let textField = document.getElementById('textField');
+  //console.log(textField.value);
+
+  displayText(css, textField.value);
+}
+
+/*displayText(css, "Hello World!!!");
+displayText(css, "Some other text");*/

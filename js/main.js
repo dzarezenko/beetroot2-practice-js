@@ -6,38 +6,35 @@
 в тегах <p></p>, добавив в открывающий тег атрибут style со всеми стилями, перечисленными в массиве.
 */
 
-var css = [
-  {
-    property: "color",
+var css = {
+  "color": {
     value: "#ff0000",
     isActive: true
   },
-  {
-    property: "font-size",
+  "font-size": {
     value: "14pt",
     isActive: true
   },
-  {
-    property: "text-align",
+  "text-align": {
     value: "center",
     isActive: true
   },
-  {
-    property: "text-decoration",
+  "text-decoration": {
     value: "underline",
     isActive: true
   }
-];
+};
 
 function displayText(cssArray, text = "") {
   let cssStyle = ""; 
   // generates css style by cssArray data
-  for (let cssProperty of cssArray) {
+  for (let cssPropertyIdx in cssArray) {
+    let cssProperty = cssArray[cssPropertyIdx];
     console.log(cssProperty);
 
     // add css property to the styles string
     if (cssProperty.isActive) {
-      cssStyle+= `${cssProperty.property}: ${cssProperty.value};`;
+      cssStyle+= `${cssPropertyIdx}: ${cssProperty.value};`;
     }
   }
 
@@ -50,6 +47,11 @@ function showTextFromInput() {
   //console.log(textField.value);
 
   displayText(css, textField.value);
+}
+
+function checkboxClick(cssProperty, context) {
+  css[cssProperty].isActive = context.checked;
+  showTextFromInput();
 }
 
 /*displayText(css, "Hello World!!!");

@@ -10,10 +10,10 @@
   <input id="textField" type="text" value="Hello World!!!" />
   <button onclick="showTextFromInput()">Display Text</button><br />
 
-  <input type="checkbox" onclick="css[0].isActive = this.checked; showTextFromInput()" checked /> color<br />
-  <input type="checkbox" onclick="css[1].isActive = this.checked; showTextFromInput()" checked /> font-size<br />
-  <input type="checkbox" onclick="css[2].isActive = this.checked; showTextFromInput()" checked /> text-align<br />
-  <input type="checkbox" onclick="css[3].isActive = this.checked; showTextFromInput()" checked /> text-decoration
+  <input type="checkbox" onclick="checkboxClick('color', this)" checked /> color<br />
+  <input type="checkbox" onclick="checkboxClick('font-size', this)" checked /> font-size<br />
+  <input type="checkbox" onclick="checkboxClick('text-align', this)" checked /> text-align<br />
+  <input type="checkbox" onclick="checkboxClick('text-decoration', this)" checked /> text-decoration
 
   <div id="container">
 
